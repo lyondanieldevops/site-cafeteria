@@ -31,10 +31,10 @@ body {
 
 section {
     padding: 2rem 7%;
-    padding-top: 13rem; /* Espaço para não cobrir o conteúdo */
+    padding-top: 15rem; /* Respiro para não cobrir o conteúdo */
 }
 
-/* HEADER */
+/* --- HEADER E LOGO --- */
 .header {
     background: var(--bg);
     display: flex;
@@ -48,7 +48,8 @@ section {
 }
 
 .header .logo img {
-    height: 7rem; /* Tamanho da sua nova logo */
+    height: 9rem; /* Logo maior e visível */
+    object-fit: contain;
 }
 
 .header .navbar a {
@@ -59,6 +60,8 @@ section {
 
 .header .navbar a:hover {
     color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
 }
 
 .header .icons div {
@@ -68,7 +71,32 @@ section {
     margin-left: 2rem;
 }
 
-/* CARDÁPIO */
+.header .search-form {
+    position: absolute;
+    top: 115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+
+/* --- SEÇÕES --- */
 .heading {
     text-align: center;
     color: #fff;
@@ -81,6 +109,41 @@ section {
     color: var(--main-color);
 }
 
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: .2rem;
+}
+
+/* HOME */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* MENU / CARDÁPIO */
 .menu .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -104,11 +167,18 @@ section {
 }
 
 .menu .box-container .box .price {
-    color: var(--main-color);
+    color: #fff;
     font-size: 2.5rem;
+    padding: .5rem 0;
 }
 
-/* MAPA */
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+/* --- LOCALIZAÇÃO (MAPA) --- */
 .contact .row {
     display: flex;
     background: var(--black);
@@ -119,31 +189,102 @@ section {
 .contact .row .map {
     flex: 1 1 45rem;
     width: 100%;
-    height: 45rem;
+    height: 45rem; /* Garante que o mapa apareça grande */
+    object-fit: cover;
 }
 
-/* BOTÃO */
-.btn {
-    margin-top: 1rem;
-    display: inline-block;
-    padding: .9rem 3rem;
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.contact .row form .inputBox {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--bg);
+    border: var(--border);
+}
+
+.contact .row form .inputBox span {
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+    width: 100%;
+    padding: 2rem;
     font-size: 1.7rem;
     color: #fff;
-    background: var(--main-color);
-    cursor: pointer;
+    text-transform: none;
+    background: none;
 }
 
+/* FOOTER */
 .footer {
     background: var(--black);
     text-align: center;
-    padding: 2rem;
 }
 
-/* MEDIA QUERIES (Mobile) */
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share a {
+    height: 5rem; width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border: var(--border);
+    margin: .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background-color: var(--main-color);
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.footer .links a {
+    padding: .7rem 2rem;
+    color: #fff;
+    border: var(--border);
+    font-size: 2rem;
+}
+
+.footer .credit {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1.5rem;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
+    #menu-btn { display: inline-block; }
     .header .navbar {
         position: absolute;
-        top: 100%; right: -100%;
+        top: 100%; right: -110%;
         background: #fff;
         width: 30rem;
         height: calc(100vh - 9.5rem);

@@ -2,98 +2,152 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Bucks | Brasília</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Café Bucks | Cafeteria Especial em Brasília</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    
     <header class="header">
-        <section class="flex">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Café Bucks">
-            </a>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Logo Café Bucks">
+        </a>
 
-            <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">Sobre</a>
-                <a href="#menu">Menu</a>
-                <a href="#contact">Endereço</a>
-            </nav>
+        <nav class="navbar">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#menu">Cardápio</a>
+            <a href="#contact">Localização</a>
+        </nav>
 
-            <div class="icons">
-                <div class="fas fa-search" id="search-btn"></div>
-                <div class="fas fa-bars" id="menu-btn"></div>
-            </div>
-        </section>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="O que você procura?">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
     </header>
 
     <section class="home" id="home">
         <div class="content">
-            <h3>Café Bucks Brasília</h3>
-            <p>O melhor café da W3 Sul. Um espaço para café, leitura e conexões.</p>
-            <a href="#menu" class="btn">Conheça o Menu</a>
+            <h3>Café Bucks: Sua Pausa na W3 Sul</h3>
+            <p>Grãos selecionados, ambiente acolhedor e o melhor café especial no coração de Brasília. Venha nos visitar e transforme seu dia.</p>
+            <a href="#menu" class="btn">Explorar Cardápio</a>
         </div>
     </section>
 
     <section class="about" id="about">
-        <h1 class="heading"><span>Sobre</span> Nós</h1>
+        <h1 class="heading"> <span>Sobre</span> Nós </h1>
         <div class="row">
+            <div class="image">
+                <img src="about-img.jpg" alt="Interior Café Bucks">
+            </div>
             <div class="content">
-                <h3>Sabor e Tradição no Coração de Brasília</h3>
-                <p>O Café Bucks nasceu da paixão pelos grãos selecionados. Localizado na W3 Sul, oferecemos um ambiente calmo para sua pausa diária.</p>
+                <h3>O que nos torna únicos em Brasília?</h3>
+                <p>O Café Bucks nasceu da vontade de oferecer um refúgio urbano. Unimos a sofisticação da W3 Sul com a simplicidade de um café bem extraído.</p>
+                <p>Trabalhamos com produtores locais e métodos artesanais para garantir que cada xícara seja memorável.</p>
+                <a href="#" class="btn">Saiba Mais</a>
             </div>
         </div>
     </section>
 
     <section class="menu" id="menu">
-        <h1 class="heading">Nosso <span>Menu</span></h1>
+        <h1 class="heading"> Nosso <span>Cardápio</span> </h1>
         <div class="box-container">
             <div class="box">
                 <img src="menu-1.png" alt="Expresso">
                 <h3>Expresso Bucks</h3>
-                <div class="price">R$ 8.00</div>
+                <div class="price">R$ 8.50 <span>R$ 11.00</span></div>
                 <a href="#" class="btn">Adicionar</a>
             </div>
+
             <div class="box">
                 <img src="menu-2.png" alt="Capuccino">
-                <h3>Capuccino</h3>
-                <div class="price">R$ 15.00</div>
+                <h3>Capuccino Tradicional</h3>
+                <div class="price">R$ 14.00 <span>R$ 18.00</span></div>
                 <a href="#" class="btn">Adicionar</a>
             </div>
+
             <div class="box">
-                <img src="menu-3.png" alt="Latte">
-                <h3>Latte Art</h3>
-                <div class="price">R$ 12.00</div>
+                <img src="menu-3.png" alt="Latte Art">
+                <h3>Latte Art Vanilla</h3>
+                <div class="price">R$ 16.00 <span>R$ 20.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
+            </div>
+
+            <div class="box">
+                <img src="menu-4.png" alt="Iced Coffee">
+                <h3>Iced Bucks Coffee</h3>
+                <div class="price">R$ 15.00 <span>R$ 19.00</span></div>
                 <a href="#" class="btn">Adicionar</a>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <h1 class="heading"><span>Nosso</span> Endereço</h1>
+        <h1 class="heading"> <span>Onde</span> Estamos </h1>
         <div class="row">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.885675406085!2d-47.9015037!3d-15.8099307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3ad0374e507b%3A0x6b40e945c7d819b1!2sW3%20Sul%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15354.38318610537!2d-47.9157833!3d-15.8115667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3ade07e15e8b%3A0xc069b1480f7d549c!2sW3%20Sul%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            
+            <form action="">
+                <h3>Fale Conosco</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="Nome completo">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="Seu e-mail">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" placeholder="Seu telefone">
+                </div>
+                <input type="submit" value="Enviar Mensagem" class="btn">
+            </form>
         </div>
     </section>
 
     <footer class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#menu">Cardápio</a>
+            <a href="#contact">Localização</a>
+        </div>
         <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Café Bucks © 2025</div>
     </footer>
 
     <script>
         let navbar = document.querySelector('.navbar');
+        let searchForm = document.querySelector('.search-form');
+
         document.querySelector('#menu-btn').onclick = () =>{
             navbar.classList.toggle('active');
+            searchForm.classList.remove('active');
         }
+
         document.querySelector('#search-btn').onclick = () =>{
-            alert('Buscando no Café Bucks...');
-        }
-        window.onscroll = () =>{
+            searchForm.classList.toggle('active');
             navbar.classList.remove('active');
         }
-    </script>
 
+        window.onscroll = () =>{
+            navbar.classList.remove('active');
+            searchForm.classList.remove('active');
+        }
+    </script>
 </body>
 </html>
