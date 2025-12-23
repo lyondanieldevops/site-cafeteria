@@ -8,62 +8,93 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     outline: none;
     border: none;
     text-decoration: none;
     text-transform: capitalize;
     transition: 0.2s linear;
-    box-sizing: border-box;
 }
 
-/* Corrigido aqui: background-color com 'n' */
 body {
     background-color: var(--bg);
     color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-/* Corrigido aqui: padding com 'rem' */
 section {
-    padding: 5rem 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
+    padding: 5rem 7%;
+    padding-top: 12rem; /* Espaço para o menu fixo não esconder o título */
 }
 
+/* HEADER */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 99;
-    border-bottom: var(--border);
+    z-index: 1000;
     background-color: var(--bg);
+    border-bottom: var(--border);
 }
 
 .header section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 7%;
+    max-width: 100%;
 }
 
-.logo img {
+.header .logo img {
     height: 6rem;
+    cursor: pointer;
 }
 
-.navbar a {
+.header .navbar a {
     margin: 0 1rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #fff;
 }
 
-.navbar a:hover {
+.header .navbar a:hover {
     color: var(--main-color);
     border-bottom: 0.1rem solid var(--main-color);
     padding-bottom: 0.5rem;
 }
 
-/* Estilo para o Cardápio aparecer */
+.icons img {
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+
+.icons img:hover {
+    filter: sepia(1) saturate(5);
+}
+
+/* HOME */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.home .content p {
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 0;
+}
+
+/* MENU / CARDÁPIO */
 .heading {
     text-align: center;
     font-size: 4rem;
@@ -76,8 +107,8 @@ section {
 
 .menu .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
 }
 
 .menu .box-container .box {
@@ -91,21 +122,54 @@ section {
 }
 
 .menu .box-container .box h3 {
+    color: #fff;
     font-size: 2rem;
     padding: 1rem 0;
 }
 
 .menu .box-container .box .price {
-    font-size: 2.5rem;
     color: var(--main-color);
+    font-size: 2.5rem;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 1rem;
     padding: 1rem 3rem;
+    font-size: 1.7rem;
     background: var(--main-color);
     color: #fff;
-    font-size: 1.7rem;
     cursor: pointer;
+    margin-top: 1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--black);
+}
+
+.footer .credit {
+    font-size: 1.8rem;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
+/* MENU MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        top: 100%; right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .navbar.active { right: 0; }
+    .navbar a {
+        color: var(--black);
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
 }

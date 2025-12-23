@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Bucks | Brasília</title>
     <link rel="stylesheet" href="style.css">
-    <title>Lyon Café - Café Bucks</title>
 </head>
 <body>
 
     <header class="header">
         <section>
             <a href="#" class="logo">
-                <img src="logo.png" alt="logo">
+                <img src="logo.png" alt="Café Bucks Logo">
             </a>
 
             <nav class="navbar">
-                <a href="#home">home</a>
+                <a href="#home">Home</a>
                 <a href="#about">Sobre</a>
                 <a href="#menu">Menu</a>
                 <a href="#review">Avaliações</a>
@@ -23,7 +23,8 @@
             </nav>
 
             <div class="icons">
-                <img width="30" height="30" src="https://img.icons8.com/?size=100&id=G7PELQpF8j6g&format=png&color=ffffff" alt="menu">
+                <img id="search-btn" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/search--v1.png" alt="buscar">
+                <img id="menu-btn" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png" alt="menu">
             </div>
         </section>
     </header>
@@ -31,8 +32,18 @@
     <section class="home" id="home">
         <div class="content">
             <h3>Café Bucks Brasília</h3>
-            <p>O melhor café da W3 Sul está aqui.</p>
-            <a href="#menu" class="btn">peça o seu</a>
+            <p>O melhor café da W3 Sul. Onde o sabor encontra o seu momento de pausa.</p>
+            <a href="#menu" class="btn">veja o menu</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>Sobre</span> Nós</h1>
+        <div class="row">
+            <div class="content">
+                <h3>O que nos torna especiais?</h3>
+                <p>No Café Bucks, cada grão é selecionado para oferecer uma experiência única. Localizado em Brasília, nosso espaço foi feito para você relaxar ou trabalhar com o melhor café.</p>
+            </div>
         </div>
     </section>
 
@@ -40,25 +51,47 @@
         <h1 class="heading">Nosso <span>Menu</span></h1>
         <div class="box-container">
             <div class="box">
-                <img src="menu-1.png" alt="">
+                <img src="menu-1.png" alt="Expresso">
                 <h3>Expresso Bucks</h3>
                 <div class="price">R$ 8.00</div>
                 <a href="#" class="btn">adicionar</a>
             </div>
             <div class="box">
-                <img src="menu-2.png" alt="">
+                <img src="menu-2.png" alt="Capuccino">
                 <h3>Capuccino</h3>
                 <div class="price">R$ 15.00</div>
                 <a href="#" class="btn">adicionar</a>
             </div>
             <div class="box">
-                <img src="menu-3.png" alt="">
+                <img src="menu-3.png" alt="Latte">
                 <h3>Latte Art</h3>
                 <div class="price">R$ 12.00</div>
                 <a href="#" class="btn">adicionar</a>
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Café Bucks © 2025</div>
+    </footer>
+
+    <script>
+        let navbar = document.querySelector('.navbar');
+        let menuBtn = document.querySelector('#menu-btn');
+        let searchBtn = document.querySelector('#search-btn');
+
+        menuBtn.onclick = () => {
+            navbar.classList.toggle('active');
+        }
+
+        searchBtn.onclick = () => {
+            alert('Procurando algo especial no Café Bucks?');
+        }
+
+        window.onscroll = () => {
+            navbar.classList.remove('active');
+        }
+    </script>
 
 </body>
 </html>
