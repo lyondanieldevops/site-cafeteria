@@ -11,7 +11,6 @@
     font-family: 'Roboto', sans-serif;
     margin: 0; padding: 0;
     box-sizing: border-box;
-    outline: none; border: none;
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
@@ -24,40 +23,24 @@ html {
     scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar {
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: #fff;
-    border-radius: 5rem;
-}
-
 body {
     background: var(--bg);
 }
 
 section {
     padding: 2rem 7%;
-    /* Ajuste crucial para o conteúdo não subir para debaixo do menu */
-    padding-top: 13rem; 
+    padding-top: 13rem; /* Evita que o topo seja engolido pelo menu */
 }
 
 .heading {
     text-align: center;
     color: #fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
     font-size: 4rem;
+    padding-bottom: 3.5rem;
 }
 
 .heading span {
     color: var(--main-color);
-    text-transform: uppercase;
 }
 
 .btn {
@@ -70,11 +53,6 @@ section {
     cursor: pointer;
 }
 
-.btn:hover {
-    letter-spacing: .2rem;
-}
-
-/* CABEÇALHO / NAVBAR */
 .header {
     background: var(--bg);
     display: flex;
@@ -88,19 +66,13 @@ section {
 }
 
 .header .logo img {
-    height: 7rem; /* Tamanho da logo Café Bucks */
+    height: 7rem;
 }
 
 .header .navbar a {
     margin: 0 1rem;
     font-size: 1.6rem;
     color: #fff;
-}
-
-.header .navbar a:hover {
-    color: var(--main-color);
-    border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .5rem;
 }
 
 .header .icons div {
@@ -110,43 +82,40 @@ section {
     margin-left: 2rem;
 }
 
-.header .icons div:hover {
-    color: var(--main-color);
+/* Estilo do Cardápio */
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
 }
 
-#menu-btn {
-    display: none;
+.menu .box-container .box {
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
 }
 
-/* HOME */
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+.menu .box-container .box img {
+    height: 10rem;
 }
 
-.home .content {
-    max-width: 60rem;
-}
-
-.home .content h3 {
-    font-size: 6rem;
-    text-transform: uppercase;
+.menu .box-container .box h3 {
     color: #fff;
-}
-
-.home .content p {
     font-size: 2rem;
-    font-weight: lighter;
-    line-height: 1.8;
     padding: 1rem 0;
-    color: #eee;
 }
 
-/* CONTATO / MAPA */
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
 .contact .row {
     display: flex;
     background: var(--black);
@@ -157,48 +126,25 @@ section {
 .contact .row .map {
     flex: 1 1 45rem;
     width: 100%;
-    object-fit: cover;
+    height: 45rem;
 }
 
-/* RODAPÉ */
 .footer {
     background: var(--black);
     text-align: center;
+    padding: 2rem;
 }
 
 .footer .credit {
     font-size: 2rem;
     color: #fff;
-    font-weight: lighter;
-    padding: 2.5rem;
 }
 
 .footer .credit span {
     color: var(--main-color);
 }
 
-/* MEDIA QUERIES (Ajuste para Celular) */
-@media (max-width: 991px) {
-    html { font-size: 55%; }
-    .header { padding: 1.5rem 2rem; }
-    section { padding: 2rem; padding-top: 10rem; }
-}
-
 @media (max-width: 768px) {
     #menu-btn { display: inline-block; }
-    .header .navbar {
-        position: absolute;
-        top: 100%; right: -100%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-    .header .navbar.active { right: 0; }
-    .header .navbar a {
-        color: var(--black);
-        display: block;
-        margin: 1.5rem;
-        padding: .5rem;
-        font-size: 2rem;
-    }
+    /* Adicione estilos de menu mobile aqui se necessário */
 }

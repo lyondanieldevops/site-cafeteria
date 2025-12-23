@@ -4,32 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café Bucks | Brasília</title>
-    
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <style>
-        /* Ajuste rápido para evitar que o conteúdo seja engolido pelo menu fixo */
-        :root {
-            --main-color: #d3ad7f;
-            --black: #13131a;
-            --bg: #010103;
-            --border: .1rem solid rgba(255,255,255,.3);
-        }
-
-        header {
-            padding: 1.5rem 7% !important; /* Aumenta o respiro da logo */
-        }
-
-        section {
-            padding-top: 12rem !important; /* Empurra o conteúdo para baixo do menu */
-        }
-
-        .logo img {
-            height: 6rem; /* Ajusta o tamanho da logo Café Bucks */
-        }
-    </style>
 </head>
 <body>
 
@@ -37,14 +13,12 @@
         <a href="#" class="logo">
             <img src="logo.png" alt="Café Bucks">
         </a>
-
         <nav class="navbar">
             <a href="#home">Início</a>
             <a href="#about">Sobre</a>
             <a href="#menu">Cardápio</a>
             <a href="#contact">Endereço</a>
         </nav>
-
         <div class="icons">
             <div class="fas fa-search" id="search-btn"></div>
             <div class="fas fa-bars" id="menu-btn"></div>
@@ -54,7 +28,7 @@
     <section class="home" id="home">
         <div class="content">
             <h3>Café Bucks Brasília</h3>
-            <p>O sabor autêntico do café especial no coração da W3 Sul. Venha conhecer nosso espaço.</p>
+            <p>O melhor café e a melhor leitura na W3 Sul. Venha conhecer nosso refúgio.</p>
             <a href="#menu" class="btn">Ver Cardápio</a>
         </div>
     </section>
@@ -63,12 +37,35 @@
         <h1 class="heading"> <span>Sobre</span> Nós </h1>
         <div class="row">
             <div class="image">
-                <img src="about-img.jpg" alt="Café Bucks Interior">
+                <img src="about-img.jpg" alt="Sobre Nós">
             </div>
             <div class="content">
-                <h3>Por que escolher o Café Bucks?</h3>
-                <p>Unimos a tradição dos grãos selecionados com a modernidade de Brasília. Um ambiente pensado para o seu descanso ou trabalho.</p>
-                <a href="#" class="btn">Saiba Mais</a>
+                <h3>O que nos torna especiais?</h3>
+                <p>No Café Bucks, acreditamos que cada xícara conta uma história. Localizados no coração de Brasília, oferecemos grãos selecionados e um ambiente acolhedor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h1 class="heading"> Nosso <span>Cardápio</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="menu-1.png" alt="">
+                <h3>Expresso Bucks</h3>
+                <div class="price">R$ 8.00 <span>12.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
+            </div>
+            <div class="box">
+                <img src="menu-2.png" alt="">
+                <h3>Capuccino</h3>
+                <div class="price">R$ 15.00 <span>20.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
+            </div>
+            <div class="box">
+                <img src="menu-3.png" alt="">
+                <h3>Latte Art</h3>
+                <div class="price">R$ 12.00 <span>18.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
             </div>
         </div>
     </section>
@@ -76,12 +73,11 @@
     <section class="contact" id="contact">
         <h1 class="heading"> <span>Nosso</span> Endereço </h1>
         <div class="row">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.883391696016!2d-47.89965042401734!3d-15.809581923293881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3ad92a114759%3A0xc34a00508f7f2b1c!2sW3%20Sul%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1703338000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.883395171788!2d-47.9044558!3d-15.8101416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b20756e0905%3A0x6b971a80e1c60775!2sW3%20Sul!5e0!3m2!1spt-BR!2sbr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <footer class="footer">
-        <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Café Bucks &copy; 2025</div>
+        <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Café Bucks © 2025</div>
     </footer>
 
     <script>
@@ -90,6 +86,5 @@
             navbar.classList.toggle('active');
         }
     </script>
-
 </body>
 </html>
