@@ -3,93 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Bucks | Brasília</title>
-    
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Lyon Café - Café Bucks</title>
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Café Bucks">
-        </a>
+        <section>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="logo">
+            </a>
 
-        <nav class="navbar">
-            <a href="#home">Início</a>
-            <a href="#about">Sobre</a>
-            <a href="#menu">Cardápio</a>
-            <a href="#contact">Endereço</a>
-        </nav>
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#about">Sobre</a>
+                <a href="#menu">Menu</a>
+                <a href="#review">Avaliações</a>
+                <a href="#address">Endereço</a>
+            </nav>
 
-        <div class="icons">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
+            <div class="icons">
+                <img width="30" height="30" src="https://img.icons8.com/?size=100&id=G7PELQpF8j6g&format=png&color=ffffff" alt="menu">
+            </div>
+        </section>
     </header>
 
     <section class="home" id="home">
         <div class="content">
             <h3>Café Bucks Brasília</h3>
-            <p>O sabor autêntico do café especial no coração da W3 Sul. O refúgio perfeito para sua pausa.</p>
-            <a href="#menu" class="btn">Ver Cardápio</a>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h1 class="heading"> <span>Sobre</span> Nós </h1>
-        <div class="row">
-            <div class="image">
-                <img src="about-img.jpg" alt="Sobre Nós">
-            </div>
-            <div class="content">
-                <h3>O que nos torna especiais?</h3>
-                <p>No Café Bucks, cada detalhe é pensado para quem ama café e uma boa leitura. Grãos selecionados e ambiente acolhedor em Brasília.</p>
-            </div>
+            <p>O melhor café da W3 Sul está aqui.</p>
+            <a href="#menu" class="btn">peça o seu</a>
         </div>
     </section>
 
     <section class="menu" id="menu">
-        <h1 class="heading"> Nosso <span>Cardápio</span> </h1>
+        <h1 class="heading">Nosso <span>Menu</span></h1>
         <div class="box-container">
             <div class="box">
                 <img src="menu-1.png" alt="">
                 <h3>Expresso Bucks</h3>
-                <div class="price">R$ 8.00 <span>12.00</span></div>
-                <a href="#" class="btn">Adicionar</a>
+                <div class="price">R$ 8.00</div>
+                <a href="#" class="btn">adicionar</a>
             </div>
             <div class="box">
                 <img src="menu-2.png" alt="">
                 <h3>Capuccino</h3>
-                <div class="price">R$ 15.00 <span>20.00</span></div>
-                <a href="#" class="btn">Adicionar</a>
+                <div class="price">R$ 15.00</div>
+                <a href="#" class="btn">adicionar</a>
             </div>
             <div class="box">
                 <img src="menu-3.png" alt="">
                 <h3>Latte Art</h3>
-                <div class="price">R$ 12.00 <span>18.00</span></div>
-                <a href="#" class="btn">Adicionar</a>
+                <div class="price">R$ 12.00</div>
+                <a href="#" class="btn">adicionar</a>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h1 class="heading"> <span>Nosso</span> Endereço </h1>
-        <div class="row">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.88747444747!2d-47.8992619!3d-15.8098402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3adef970633b%3A0x673998980993081e!2sW3%20Sul!5e0!3m2!1spt-BR!2sbr!4v1703340000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Café Bucks © 2025</div>
-    </footer>
-
-    <script>
-        let navbar = document.querySelector('.navbar');
-        document.querySelector('#menu-btn').onclick = () =>{
-            navbar.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
