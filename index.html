@@ -4,127 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star-Coffee | Brasília</title>
-    
     <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <header class="header">
-        <section>
-            <a href="#" class="logo">
-                <i class="fas fa-mug-hot" style="color:var(--main-color); font-size: 2.5rem;"></i>
-                <span class="logo-text">STAR-COFFEE</span>
-            </a>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Logo Star Coffee">
+        </a>
 
-            <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">Sobre</a>
-                <a href="#menu">Menu</a>
-                <a href="#review">Avaliações</a>
-                <a href="#address">Endereço</a>
-            </nav>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#menu">Menu</a>
+            <a href="#review">Avaliações</a>
+            <a href="#contact">Contato</a>
+        </nav>
 
-            <div class="icons">
-                <div class="fas fa-search" id="search-btn"></div>
-                <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            </div>
-
-            <form class="search-form">
-                <input type="search" id="search-box" placeholder="Pesquisar produto...">
-                <label for="search-box" class="fas fa-search"></label>
-            </form>
-
-            <div class="cart-items-container">
-                <h2 style="color: #000; padding: 1.5rem; font-size: 2rem;">Meu Carrinho</h2>
-                <div class="cart-item">
-                    <span class="fas fa-times"></span>
-                    <img src="menu-1.png" alt="">
-                    <div class="content">
-                        <h3>Café Especial</h3>
-                        <div class="price">R$ 15,99</div>
-                    </div>
-                </div>
-                <a href="#" class="btn-checkout">Finalizar Pedido</a>
-            </div>
-        </section>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
     </header>
 
-    <section class="home-container" id="home">
+    <section class="home" id="home">
         <div class="content">
-            <h3>CAFÉ QUE <br><span>INSPIRA</span></h3>
-            <p>O melhor da experiência Starbucks agora com a alma de Brasília.</p>
-            <a href="#menu" class="btn">Peça Agora</a>
+            <h3>O melhor café de Brasília</h3>
+            <p>Sinta o aroma e o sabor de grãos selecionados na W3 Sul. Um ambiente feito para quem ama café de verdade.</p>
+            <a href="#menu" class="btn">Peça o Seu Agora</a>
         </div>
     </section>
 
     <section class="about" id="about">
-        <h2 class="heading">NOSSA <span>HISTÓRIA</span></h2>
+        <h1 class="heading"> <span>Sobre</span> Nós </h1>
         <div class="row">
             <div class="image">
-                <img src="about-img.jpg" alt="Sobre Nós">
+                <img src="about-img.jpg" alt="Nossa Cafeteria">
             </div>
             <div class="content">
-                <h3>O Sabor Único da Asa Sul</h3>
-                <p>O Star-Coffee nasceu para unir a sofisticação dos grandes cafés com o atendimento acolhedor da W3 Sul.</p>
+                <h3>O que faz nosso café especial?</h3>
+                <p>Nascemos no coração de Brasília com a missão de trazer a cultura do café especial para a W3 Sul. Trabalhamos com produtores locais e torra artesanal.</p>
                 <a href="#" class="btn">Saiba Mais</a>
             </div>
         </div>
     </section>
 
     <section class="menu" id="menu">
-        <h2 class="heading">CARDÁPIO <span>PREMIUM</span></h2>
+        <h1 class="heading"> Nosso <span>Menu</span> </h1>
         <div class="box-container">
             <div class="box">
                 <img src="menu-1.png" alt="">
-                <h3>Latte Macchiato</h3>
-                <div class="price">R$ 18,90</div>
-                <a href="#" class="btn-cart">Adicionar</a>
+                <h3>Café Expresso</h3>
+                <div class="price">R$ 8.00 <span>12.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
             </div>
             <div class="box">
                 <img src="menu-2.png" alt="">
-                <h3>Mocha Dourado</h3>
-                <div class="price">R$ 21,50</div>
-                <a href="#" class="btn-cart">Adicionar</a>
+                <h3>Capuccino</h3>
+                <div class="price">R$ 15.00 <span>20.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
             </div>
             <div class="box">
                 <img src="menu-3.png" alt="">
-                <h3>Capuccino Star</h3>
-                <div class="price">R$ 16,00</div>
-                <a href="#" class="btn-cart">Adicionar</a>
+                <h3>Latte Art</h3>
+                <div class="price">R$ 12.00 <span>18.00</span></div>
+                <a href="#" class="btn">Adicionar</a>
             </div>
         </div>
     </section>
 
-    <section class="address" id="address">
-        <h2 class="heading">COMO <span>CHEGAR</span></h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.74724853037!2d-47.915570!3d-15.817296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b207e4d8985%3A0x868b1a8d56b43b6b!2sCLS%20311%20Asa%20Sul!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr0" 
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+    <section class="contact" id="contact">
+        <h1 class="heading"> <span>Fale</span> Conosco </h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.8637785239965!2d-47.89926138514489!3d-15.811181289039166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3ade0751915f%3A0x6b490a6e026b216c!2sW3%20Sul%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1703340000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+
+            <form action="">
+                <h3>Entre em contato</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="Seu e-mail">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" placeholder="Seu telefone">
+                </div>
+                <input type="submit" value="Enviar Mensagem" class="btn">
+            </form>
+        </div>
     </section>
 
-    <script>
-        let searchForm = document.querySelector('.search-form');
-        let cartItem = document.querySelector('.cart-items-container');
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
+        <div class="credit">Criado por <span>Lyon Daniel DevOps</span> | Todos os direitos reservados</div>
+    </section>
 
-        document.querySelector('#search-btn').onclick = () => {
-            searchForm.classList.toggle('active');
-            cartItem.classList.remove('active');
-        };
-
-        document.querySelector('#cart-btn').onclick = () => {
-            cartItem.classList.toggle('active');
-            searchForm.classList.remove('active');
-        };
-
-        window.onscroll = () => {
-            searchForm.classList.remove('active');
-            cartItem.classList.remove('active');
-        };
-    </script>
 </body>
 </html>
