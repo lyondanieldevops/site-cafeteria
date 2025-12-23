@@ -4,14 +4,13 @@
     --main-color: #d3ad7f;
     --black: #13131a;
     --bg: #010103;
-    --border: 0.1rem solid rgba(255,255,255,0.3);
+    --border: .1rem solid rgba(255,255,255,.3);
 }
 
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0; padding: 0;
     box-sizing: border-box;
-    outline: none; border: none;
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
@@ -24,17 +23,9 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background: var(--bg);
-    color: #fff;
-}
+body { background: var(--bg); color: #fff; }
 
-section {
-    padding: 2rem 7%;
-    padding-top: 15rem; /* Respiro para não cobrir o conteúdo */
-}
-
-/* --- HEADER E LOGO --- */
+/* HEADER FIXO E LOGO */
 .header {
     background: var(--bg);
     display: flex;
@@ -48,20 +39,36 @@ section {
 }
 
 .header .logo img {
-    height: 9rem; /* Logo maior e visível */
+    height: 7rem;
     object-fit: contain;
 }
 
+/* ANIMAÇÃO DOS NOMES NO MENU (NAVBAR) */
 .header .navbar a {
     margin: 0 1rem;
     font-size: 1.6rem;
     color: #fff;
+    position: relative;
 }
 
 .header .navbar a:hover {
     color: var(--main-color);
-    border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .5rem;
+}
+
+/* Linha que aparece ao passar o cursor */
+.header .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
 }
 
 .header .icons div {
@@ -71,6 +78,7 @@ section {
     margin-left: 2rem;
 }
 
+/* BARRA DE PESQUISA ANIMADA */
 .header .search-form {
     position: absolute;
     top: 115%; right: 7%;
@@ -83,31 +91,44 @@ section {
     transform-origin: top;
 }
 
-.header .search-form.active {
-    transform: scaleY(1);
-}
+.header .search-form.active { transform: scaleY(1); }
 
 .header .search-form input {
-    height: 100%;
-    width: 100%;
+    height: 100%; width: 100%;
     font-size: 1.6rem;
     color: var(--black);
     padding: 1rem;
     text-transform: none;
 }
 
-/* --- SEÇÕES --- */
-.heading {
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
+/* CONTEÚDO E MAPA */
+section { padding: 2rem 7%; padding-top: 13rem; }
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('home-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.heading span {
-    color: var(--main-color);
+.home .content h3 { font-size: 6rem; color: #fff; text-transform: none; }
+.home .content p { font-size: 2rem; color: #eee; line-height: 1.8; padding: 1rem 0; }
+
+.heading { text-align: center; color: #fff; font-size: 4rem; padding-bottom: 3.5rem; }
+.heading span { color: var(--main-color); }
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
 }
+
+.menu .box-container .box { padding: 5rem; text-align: center; border: var(--border); }
+
+/* MAPA FIXO */
+.contact .row .map { width: 100%; height: 45rem; border: var(--border); }
 
 .btn {
     margin-top: 1rem;
@@ -119,181 +140,4 @@ section {
     cursor: pointer;
 }
 
-.btn:hover {
-    letter-spacing: .2rem;
-}
-
-/* HOME */
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home .content {
-    max-width: 60rem;
-}
-
-.home .content h3 {
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-/* MENU / CARDÁPIO */
-.menu .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
-
-.menu .box-container .box {
-    padding: 5rem;
-    text-align: center;
-    border: var(--border);
-}
-
-.menu .box-container .box img {
-    height: 10rem;
-}
-
-.menu .box-container .box h3 {
-    color: #fff;
-    font-size: 2rem;
-    padding: 1rem 0;
-}
-
-.menu .box-container .box .price {
-    color: #fff;
-    font-size: 2.5rem;
-    padding: .5rem 0;
-}
-
-.menu .box-container .box .price span {
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
-}
-
-/* --- LOCALIZAÇÃO (MAPA) --- */
-.contact .row {
-    display: flex;
-    background: var(--black);
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.contact .row .map {
-    flex: 1 1 45rem;
-    width: 100%;
-    height: 45rem; /* Garante que o mapa apareça grande */
-    object-fit: cover;
-}
-
-.contact .row form {
-    flex: 1 1 45rem;
-    padding: 5rem 2rem;
-    text-align: center;
-}
-
-.contact .row form h3 {
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color: #fff;
-}
-
-.contact .row form .inputBox {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background: var(--bg);
-    border: var(--border);
-}
-
-.contact .row form .inputBox span {
-    color: #fff;
-    font-size: 2rem;
-    padding-left: 2rem;
-}
-
-.contact .row form .inputBox input {
-    width: 100%;
-    padding: 2rem;
-    font-size: 1.7rem;
-    color: #fff;
-    text-transform: none;
-    background: none;
-}
-
-/* FOOTER */
-.footer {
-    background: var(--black);
-    text-align: center;
-}
-
-.footer .share {
-    padding: 1rem 0;
-}
-
-.footer .share a {
-    height: 5rem; width: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    color: #fff;
-    border: var(--border);
-    margin: .3rem;
-    border-radius: 50%;
-}
-
-.footer .share a:hover {
-    background-color: var(--main-color);
-}
-
-.footer .links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-    gap: 1rem;
-}
-
-.footer .links a {
-    padding: .7rem 2rem;
-    color: #fff;
-    border: var(--border);
-    font-size: 2rem;
-}
-
-.footer .credit {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: lighter;
-    padding: 1.5rem;
-}
-
-.footer .credit span {
-    color: var(--main-color);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    #menu-btn { display: inline-block; }
-    .header .navbar {
-        position: absolute;
-        top: 100%; right: -110%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-    .header .navbar.active { right: 0; }
-    .header .navbar a {
-        color: var(--black);
-        display: block;
-        margin: 2rem;
-        font-size: 2rem;
-    }
-}
+.footer { background: var(--black); text-align: center; padding: 2rem; }
