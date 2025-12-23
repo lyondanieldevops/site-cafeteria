@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 :root {
     --main-color: #d3ad7f;
     --black: #13131a;
@@ -6,49 +8,47 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
+    outline: none; border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: 0.2s linear;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg);
+    background: var(--bg);
     color: #fff;
-    font-family: Arial, sans-serif;
 }
 
 section {
-    padding: 5rem 7%;
-    padding-top: 12rem; /* Espaço para o menu fixo não esconder o título */
+    padding: 2rem 7%;
+    padding-top: 13rem; /* Espaço para não cobrir o conteúdo */
 }
 
 /* HEADER */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--bg);
-    border-bottom: var(--border);
-}
-
-.header section {
+    background: var(--bg);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 7%;
-    max-width: 100%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
 }
 
 .header .logo img {
-    height: 6rem;
-    cursor: pointer;
+    height: 7rem; /* Tamanho da sua nova logo */
 }
 
 .header .navbar a {
@@ -59,46 +59,22 @@ section {
 
 .header .navbar a:hover {
     color: var(--main-color);
-    border-bottom: 0.1rem solid var(--main-color);
-    padding-bottom: 0.5rem;
 }
 
-.icons img {
-    cursor: pointer;
-    margin-left: 1.5rem;
-}
-
-.icons img:hover {
-    filter: sepia(1) saturate(5);
-}
-
-/* HOME */
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home .content h3 {
-    font-size: 6rem;
+.header .icons div {
     color: #fff;
-    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
 }
 
-.home .content p {
-    font-size: 2rem;
-    color: #eee;
-    padding: 1rem 0;
-}
-
-/* MENU / CARDÁPIO */
+/* CARDÁPIO */
 .heading {
     text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
     font-size: 4rem;
-    margin-bottom: 3rem;
 }
 
 .heading span {
@@ -112,7 +88,7 @@ section {
 }
 
 .menu .box-container .box {
-    padding: 3rem;
+    padding: 5rem;
     text-align: center;
     border: var(--border);
 }
@@ -132,41 +108,48 @@ section {
     font-size: 2.5rem;
 }
 
+/* MAPA */
+.contact .row {
+    display: flex;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    height: 45rem;
+}
+
+/* BOTÃO */
 .btn {
-    display: inline-block;
-    padding: 1rem 3rem;
-    font-size: 1.7rem;
-    background: var(--main-color);
-    color: #fff;
-    cursor: pointer;
     margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
 }
 
 .footer {
+    background: var(--black);
     text-align: center;
     padding: 2rem;
-    background-color: var(--black);
 }
 
-.footer .credit {
-    font-size: 1.8rem;
-}
-
-.footer .credit span {
-    color: var(--main-color);
-}
-
-/* MENU MOBILE */
+/* MEDIA QUERIES (Mobile) */
 @media (max-width: 768px) {
-    .navbar {
+    .header .navbar {
         position: absolute;
         top: 100%; right: -100%;
-        background-color: #fff;
+        background: #fff;
         width: 30rem;
         height: calc(100vh - 9.5rem);
     }
-    .navbar.active { right: 0; }
-    .navbar a {
+    .header .navbar.active { right: 0; }
+    .header .navbar a {
         color: var(--black);
         display: block;
         margin: 2rem;
