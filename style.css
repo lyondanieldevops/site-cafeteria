@@ -29,7 +29,7 @@ body {
 
 section {
     padding: 2rem 7%;
-    padding-top: 13rem; /* Evita que o topo seja engolido pelo menu */
+    padding-top: 13rem; /* IMPORTANTE: Espaço para a logo não sumir */
 }
 
 .heading {
@@ -53,6 +53,7 @@ section {
     cursor: pointer;
 }
 
+/* HEADER */
 .header {
     background: var(--bg);
     display: flex;
@@ -82,7 +83,29 @@ section {
     margin-left: 2rem;
 }
 
-/* Estilo do Cardápio */
+/* HOME */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: #fff;
+}
+
+.home .content p {
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/* MENU / CARDÁPIO */
 .menu .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -113,14 +136,13 @@ section {
 .menu .box-container .box .price span {
     font-size: 1.5rem;
     text-decoration: line-through;
-    font-weight: lighter;
 }
 
+/* MAPA */
 .contact .row {
     display: flex;
     background: var(--black);
     flex-wrap: wrap;
-    gap: 1rem;
 }
 
 .contact .row .map {
@@ -129,6 +151,7 @@ section {
     height: 45rem;
 }
 
+/* FOOTER */
 .footer {
     background: var(--black);
     text-align: center;
@@ -142,9 +165,4 @@ section {
 
 .footer .credit span {
     color: var(--main-color);
-}
-
-@media (max-width: 768px) {
-    #menu-btn { display: inline-block; }
-    /* Adicione estilos de menu mobile aqui se necessário */
 }
