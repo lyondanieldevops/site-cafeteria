@@ -1,16 +1,130 @@
 <!DOCTYPE html>
-<html lang="en-pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lyon café</title>
+    <title>Star-Coffee | Brasília</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header" class="logo">
-        <a href="#">
 
-        </a>
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <i class="fas fa-mug-hot" style="color:var(--main-color); font-size: 2.5rem;"></i>
+                <span class="logo-text">STAR-COFFEE</span>
+            </a>
 
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#menu">Menu</a>
+                <a href="#review">Avaliações</a>
+                <a href="#address">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            </div>
+
+            <form class="search-form">
+                <input type="search" id="search-box" placeholder="Pesquisar produto...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="cart-items-container">
+                <h2 style="color: #000; padding: 1.5rem; font-size: 2rem;">Meu Carrinho</h2>
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="menu-1.png" alt="">
+                    <div class="content">
+                        <h3>Café Especial</h3>
+                        <div class="price">R$ 15,99</div>
+                    </div>
+                </div>
+                <a href="#" class="btn-checkout">Finalizar Pedido</a>
+            </div>
+        </section>
     </header>
+
+    <section class="home-container" id="home">
+        <div class="content">
+            <h3>CAFÉ QUE <br><span>INSPIRA</span></h3>
+            <p>O melhor da experiência Starbucks agora com a alma de Brasília.</p>
+            <a href="#menu" class="btn">Peça Agora</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">NOSSA <span>HISTÓRIA</span></h2>
+        <div class="row">
+            <div class="image">
+                <img src="about-img.jpg" alt="Sobre Nós">
+            </div>
+            <div class="content">
+                <h3>O Sabor Único da Asa Sul</h3>
+                <p>O Star-Coffee nasceu para unir a sofisticação dos grandes cafés com o atendimento acolhedor da W3 Sul.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2 class="heading">CARDÁPIO <span>PREMIUM</span></h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="menu-1.png" alt="">
+                <h3>Latte Macchiato</h3>
+                <div class="price">R$ 18,90</div>
+                <a href="#" class="btn-cart">Adicionar</a>
+            </div>
+            <div class="box">
+                <img src="menu-2.png" alt="">
+                <h3>Mocha Dourado</h3>
+                <div class="price">R$ 21,50</div>
+                <a href="#" class="btn-cart">Adicionar</a>
+            </div>
+            <div class="box">
+                <img src="menu-3.png" alt="">
+                <h3>Capuccino Star</h3>
+                <div class="price">R$ 16,00</div>
+                <a href="#" class="btn-cart">Adicionar</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="address" id="address">
+        <h2 class="heading">COMO <span>CHEGAR</span></h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.74724853037!2d-47.915570!3d-15.817296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b207e4d8985%3A0x868b1a8d56b43b6b!2sCLS%20311%20Asa%20Sul!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr0" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </section>
+
+    <script>
+        let searchForm = document.querySelector('.search-form');
+        let cartItem = document.querySelector('.cart-items-container');
+
+        document.querySelector('#search-btn').onclick = () => {
+            searchForm.classList.toggle('active');
+            cartItem.classList.remove('active');
+        };
+
+        document.querySelector('#cart-btn').onclick = () => {
+            cartItem.classList.toggle('active');
+            searchForm.classList.remove('active');
+        };
+
+        window.onscroll = () => {
+            searchForm.classList.remove('active');
+            cartItem.classList.remove('active');
+        };
+    </script>
 </body>
 </html>

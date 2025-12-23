@@ -1,0 +1,20 @@
+name: Teste de Automacao do Site
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  verificacao:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixando o codigo do site
+      uses: actions/checkout@v3
+
+    - name: Testando se os arquivos estao na pasta
+      run: |
+        echo "Iniciando teste de arquivos..."
+        ls index.html
+        ls style.css
+        echo "Tudo certo! O site tem os arquivos principais."
